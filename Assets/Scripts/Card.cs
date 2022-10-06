@@ -1,18 +1,35 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class Card : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CardScriptableObject cardScriptableObject;
+    [SerializeField] private Renderer renderer;
+    [SerializeField] private Shader _shader;
+    [SerializeField] private TMP_Text textTitle;
+    [SerializeField] private TMP_Text textDescription;
+    [SerializeField] private TMP_Text textFunFact;
+    [SerializeField] private TMP_Text textEcosystem;
+    [SerializeField] private TMP_Text textMechanics;
+
+    public void Start()
     {
-        
+        Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize()
     {
-        
+        renderer.material = cardScriptableObject.material;
+        textTitle.SetText(cardScriptableObject.title);
+        textDescription.SetText(cardScriptableObject.description);
+        textFunFact.SetText(cardScriptableObject.funFact);
+        textEcosystem.SetText(cardScriptableObject.ecosystem.ToString());
+        List<string> mechanics = cardScriptableObject.mechanics
+            .Select(x => x.ToString()).ToList();
+        textMechanics.SetText(String.Join(", ", mechanics));
     }
+    
 }

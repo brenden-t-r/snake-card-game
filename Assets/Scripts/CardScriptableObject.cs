@@ -7,6 +7,7 @@ using UnityEngine.Assertions.Must;
 public class CardScriptableObject : ScriptableObject
 {
     public Sprite sprite;
+    public Material material;
     public string title;
     public string funFact;
     public string description;
