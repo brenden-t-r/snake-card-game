@@ -1,15 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabCard;
-    private int numOfCards = 0;
     private readonly float Z_OFFSET = 0.2f;
     private readonly float LAYOUT_MIN_WIDTH = 0.2f;
     private readonly float LAYOUT_PREFERRED_WIDTH = 2.8f;
     private readonly int HAND_LAYER = 3;
-    
+
+    [SerializeField] private GameObject prefabCard;
+    private int numOfCards = 0;
+
     public void Draw()
     {
         numOfCards += 1;
@@ -23,9 +25,6 @@ public class Hand : MonoBehaviour
         Refresh();
     }
 
-
-    private readonly int PREFERRED_ORTHOGRAPHIC_SIZE = 4;
-    
     void Refresh()
     {
         SetLayerAllChildren(transform, HAND_LAYER);
@@ -38,5 +37,10 @@ public class Hand : MonoBehaviour
         {
             child.gameObject.layer = layer;
         }
+    }
+    
+    public void ShowAllCards()
+    {
+        SceneManager.LoadScene("Scenes/CardDisplayDemoScene", LoadSceneMode.Additive);
     }
 }
