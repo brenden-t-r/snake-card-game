@@ -22,6 +22,8 @@ public class Hand : MonoBehaviour
         layoutElement.minWidth = LAYOUT_MIN_WIDTH;
         layoutElement.preferredWidth = LAYOUT_PREFERRED_WIDTH;
         rectTransform.position = new Vector3(0, 0, numOfCards * Z_OFFSET);
+        rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, 0);
+        card.AddComponent<HandCard>();
         Refresh();
     }
 
