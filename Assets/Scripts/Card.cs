@@ -8,7 +8,6 @@ public class Card : MonoBehaviour
 {
     [SerializeField] private CardScriptableObject cardScriptableObject;
     [SerializeField] private Renderer renderer;
-    [SerializeField] private Shader _shader;
     [SerializeField] private TMP_Text textTitle;
     [SerializeField] private TMP_Text textDescription;
     [SerializeField] private TMP_Text textFunFact;

@@ -1,12 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class CardScriptableObject : ScriptableObject
 {
-    public Sprite sprite;
     public Material material;
     public string title;
     public string funFact;
