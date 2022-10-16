@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
+  m_Name: Card_BlackMamba
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 5b60060772886484299f0d3e9ea47c4b, type: 2}
+  title: Black Mamba
+  funFact: The most venomous snake
+  description: Sdf asdf sdf s
+  ecosystem: 2
+  mechanics: 00000000

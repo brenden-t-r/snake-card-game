@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
-  m_Name: Card_GreenTreeSnake
+  m_Name: Card_IndianCobra
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  material: {fileID: 2100000, guid: 757d4dce43cd18445bba262143188272, type: 2}
-  title: Green Tree Snake
-  funFact: hkkhjkj
-  description: jbjljhkjhk
-  ecosystem: 1
-  mechanics: 
+  material: {fileID: 2100000, guid: c8d7b5e134b4fa341be1e531115da109, type: 2}
+  title: Indian Cobra
+  funFact: asdfasdkl asdf asdf as df
+  description: Sdf asdf sdf s
+  ecosystem: 2
+  mechanics: 00000000
