@@ -19,6 +19,11 @@ public class Card : MonoBehaviour
         Initialize();
     }
 
+    public void SetType(CardScriptableObject type)
+    {
+        cardScriptableObject = type;
+    }
+
     public void Initialize()
     {
         renderer.material = cardScriptableObject.material;

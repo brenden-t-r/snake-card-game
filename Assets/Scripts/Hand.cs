@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
@@ -8,10 +7,13 @@ public class Hand : MonoBehaviour
     private readonly float LAYOUT_MIN_WIDTH = 0.2f;
     private readonly float LAYOUT_PREFERRED_WIDTH = 2.8f;
     private readonly int HAND_LAYER = 3;
-
     [SerializeField] private GameObject prefabCard;
     private int numOfCards = 0;
 
+    /*
+     * Draw a card (currently just draws a dummy card)
+     * TODO: Integrate with Deck.
+     */
     public void Draw()
     {
         numOfCards += 1;
@@ -24,25 +26,6 @@ public class Hand : MonoBehaviour
         rectTransform.position = new Vector3(0, 0, numOfCards * Z_OFFSET);
         rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, 0);
         card.AddComponent<HandCard>();
-        Refresh();
-    }
-
-    void Refresh()
-    {
-        SetLayerAllChildren(transform, HAND_LAYER);
-    }
-    
-    void SetLayerAllChildren(Transform root, int layer)
-    {
-        var children = root.GetComponentsInChildren<Transform>(includeInactive: true);
-        foreach (var child in children)
-        {
-            child.gameObject.layer = layer;
-        }
-    }
-    
-    public void ShowAllCards()
-    {
-        SceneManager.LoadScene("Scenes/CardDisplayDemoScene", LoadSceneMode.Additive);
+        Utils.SetLayerAllChildren(transform, HAND_LAYER);
     }
 }
