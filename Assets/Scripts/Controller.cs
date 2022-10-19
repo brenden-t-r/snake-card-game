@@ -5,6 +5,6 @@ public class Controller : MonoBehaviour
 {
     public void ShowAllCards()
     {
-        SceneManager.LoadScene("Scenes/CardDisplayDemoScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Scenes/CardDisplayDemoScene");
     }
 }
