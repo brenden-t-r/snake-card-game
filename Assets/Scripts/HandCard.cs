@@ -13,10 +13,10 @@ public class HandCard : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        Vector3 pos = transform.localPosition;
-        z = pos.z;
-        transform.localPosition.Set(
-            pos.x, pos.y + HOVER_MOVEMENT_DISTANCE, HOVER_Z_POSITION
+        z = transform.localPosition.z;
+        transform.localPosition = new Vector3(
+            transform.localPosition.x, 
+            transform.localPosition.y + HOVER_MOVEMENT_DISTANCE, HOVER_Z_POSITION
         );
     }
 

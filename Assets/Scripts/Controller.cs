@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Controller
+public class Controller : MonoBehaviour
 {
     public void ShowAllCards()
     {
