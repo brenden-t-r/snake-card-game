@@ -9,7 +9,6 @@ public class Deck : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("y");
         // Create prefab for each card in cardTypes
         foreach (CardScriptableObject type in cardTypes)
         {
