@@ -1,12 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Hand : MonoBehaviour
+/*
+ * Duplicate of Hand class, but configured for the customer fitter hand.
+ */
+public class HandCustomFitter : MonoBehaviour
 {
-    private readonly float Z_OFFSET = 0.2f;
-    private readonly float LAYOUT_MIN_WIDTH = 0.2f;
-    private readonly float LAYOUT_PREFERRED_WIDTH = 2.8f;
     private readonly int HAND_LAYER = 3;
+    [SerializeField] private float SCALE_FACTOR = 0; // Hack for camera scale difference
     [SerializeField] private GameObject prefabCard;
     private int numOfCards = 0;
 
@@ -30,6 +31,7 @@ public class Hand : MonoBehaviour
 
     /*
      * Draw a card (currently just draws a dummy card)
+     * TODO: Integrate with Deck.
      */
     public void Draw()
     {
@@ -41,13 +43,14 @@ public class Hand : MonoBehaviour
     private void DoSetupCard(GameObject card)
     {
         card.layer = HAND_LAYER;
-        RectTransform rectTransform = card.GetComponent<RectTransform>();
-        LayoutElement layoutElement = card.AddComponent<LayoutElement>();
-        layoutElement.minWidth = LAYOUT_MIN_WIDTH;
-        layoutElement.preferredWidth = LAYOUT_PREFERRED_WIDTH;
-        rectTransform.position = new Vector3(0, 0, numOfCards * Z_OFFSET);
-        rectTransform.localScale = new Vector3(rectTransform.localScale.x, rectTransform.localScale.y, 0);
-        card.AddComponent<HandCard>();
+        Transform cardTransform = card.GetComponent<Transform>();
+        if (SCALE_FACTOR > 0)
+        {
+            cardTransform.localScale = new Vector3(
+                cardTransform.localScale.x * SCALE_FACTOR, 
+                cardTransform.localScale.y, 0
+                );
+        }
         Utils.SetLayerAllChildren(transform, HAND_LAYER);
     }
 }

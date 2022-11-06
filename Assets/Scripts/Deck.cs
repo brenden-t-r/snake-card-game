@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Deck : MonoBehaviour
@@ -19,15 +20,23 @@ public class Deck : MonoBehaviour
             cardScript.Initialize();
             cards.Add(card);
         }
-
-        foreach (GameObject card in cards)
-        {
-            Debug.Log(card.name);
-        }
     }
 
     public List<GameObject> GetCards()
     {
         return cards;
+    }
+
+    public void DrawCard()
+    {
+        // Remove top card from deck
+        // TODO: Animation
+        GameObject card = cards[0];
+        cards = cards.Skip(1).ToList();
+        Destroy(card);
+
+        // Trigger draw card event (subscribed by Hand)
+        CardScriptableObject type = card.GetComponent<Card>().GetType();
+        Events.EventDrawCard.Invoke(type);
     }
 }

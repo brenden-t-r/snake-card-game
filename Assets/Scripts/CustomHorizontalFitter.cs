@@ -18,7 +18,7 @@ public class CustomHorizontalFitter : MonoBehaviour
     // Preferred width is how wide a card would like to be if there is extra room.
     private readonly float ELEMENT_PREFERRED_WIDTH = 0.27f;
     
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cam;
     private RectTransform rect;
     private List<Transform> elements;
     private Vector3 startPosition;
@@ -42,8 +42,9 @@ public class CustomHorizontalFitter : MonoBehaviour
         if (elements == null || elements.Count < 1) return;
 
         // Hover display or un-display based on mouse position
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hit)) 
+        int layerMask = 1 << gameObject.layer;
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, layerMask)) 
         {
             OnHoverEnter(hit.transform);
         }
@@ -107,7 +108,9 @@ public class CustomHorizontalFitter : MonoBehaviour
     private void OnHoverEnter(Transform hit)
     {
         // Find card that was hovered over, and un-hover last hovered element if any.
-        int index = elements.FindIndex(x => x.name.Equals(hit.name)); // TODO: Probably use pos instead
+        // Use the z index to identify card, should be unique
+        int index = elements.FindIndex(x => x.localPosition.z.Equals(hit.localPosition.z));
+        if (index < 0) return; // TODO: Why is this possible?
         if (lastHoverIndex == index) return;
         OnHoverExit();
         lastHoverIndex = index;
