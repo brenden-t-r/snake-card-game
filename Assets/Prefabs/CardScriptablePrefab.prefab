@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1335264271011849961}
   - component: {fileID: 6663362921180245264}
   - component: {fileID: 8800097369017680301}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389411694543080020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.001}
   m_LocalScale: {x: 0.3808073, y: 0.25378135, z: 100}
   m_Children:
   - {fileID: 3861681198898685665}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1184965972223126453}
   - component: {fileID: 5472674473885316109}
   - component: {fileID: 6765928133006867072}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextAction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 3861681198898685665}
   - component: {fileID: 1921202945065830670}
   - component: {fileID: 4906822500889899357}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 8887095138341320596}
   - component: {fileID: 2252190114081506756}
   - component: {fileID: 3860260526458135694}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextAction (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925274943888863742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5327857406843766893}
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 7484487629016265856}
   - component: {fileID: 408244209843550839}
   - component: {fileID: 3743463224962213106}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   - component: {fileID: 202768389701633033}
   - component: {fileID: 3625795772433575234}
   - component: {fileID: 8454282708296929211}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextAttributes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

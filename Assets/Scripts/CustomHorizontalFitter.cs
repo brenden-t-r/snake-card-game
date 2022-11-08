@@ -9,7 +9,7 @@ using UnityEngine;
 public class CustomHorizontalFitter : MonoBehaviour
 {
     // For card movement on hover.
-    private readonly float HOVER_Y_OFFSET = 0f;
+    [SerializeField] private float HOVER_Y_OFFSET = 0f;
     private readonly float HOVER_Z_OFFSET = -4.9f;
     
     // Cards on the left-side of your hand are closer to the camera.
