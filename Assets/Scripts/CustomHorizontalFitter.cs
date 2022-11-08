@@ -9,7 +9,7 @@ using UnityEngine;
 public class CustomHorizontalFitter : MonoBehaviour
 {
     // For card movement on hover.
-    private readonly float HOVER_Y_OFFSET = 0.5f;
+    private readonly float HOVER_Y_OFFSET = 0f;
     private readonly float HOVER_Z_OFFSET = -4.9f;
     
     // Cards on the left-side of your hand are closer to the camera.
@@ -95,12 +95,12 @@ public class CustomHorizontalFitter : MonoBehaviour
         for (int i = middleIndex - 1, j = 1; i >= 0; i--, j++)
         {
             float x = 0 - (elementWidth * j) + offset;
-            elements[i].localPosition = new Vector3(x, 0, -CARD_Z_OFFSET * j);
+            elements[i].localPosition = new Vector3(x, 0, CARD_Z_OFFSET * j);
         }
         for (int i = middleIndex + 1, j = 1; i < elements.Count; i++, j++)
         {
             float x = 0 + (elementWidth * j) + offset;
-            elements[i].localPosition = new Vector3(x, 0, CARD_Z_OFFSET * j);
+            elements[i].localPosition = new Vector3(x, 0, -CARD_Z_OFFSET * j);
         }
     }
 
@@ -134,18 +134,24 @@ public class CustomHorizontalFitter : MonoBehaviour
         // in the parent's width and the number of cards to fit. 
         float offsetWidth = Math.Abs(elements[1].localPosition.x -
                                      (elements[0].localPosition.x + elements[0].localScale.x));
-        
+
         // Adjust card positions to the left and right of the hovered card, to prevent adjacent cards from being
         // hidden under the hovered card. Cards will be moved to the left or right based on the width of the
         // overlap between two adjacent cards. 
-        for (int i = index-1, j = 1; i >= 0; i--, j++)
-        {
-            float x = elements[i].localPosition.x - (offsetWidth);
-            elements[i].localPosition = new Vector3(x, 0, HOVER_Z_OFFSET + (CARD_Z_OFFSET * j));
-        }
+        // for (int i = index-1, j = 1; i >= 0; i--, j++)
+        // {
+        //     elements[i].localPosition = new Vector3(elements[i].localPosition.x, 
+        //         0,
+        //         HOVER_Z_OFFSET + (CARD_Z_OFFSET * j));
+        // }
+        // for (int i = 0, j = 1; i < index; i++, j++)
+        // {
+        //     float x = elements[i].localPosition.x - (offsetWidth);// + (offsetWidth/2);
+        //     elements[i].localPosition = new Vector3(x, 0, HOVER_Z_OFFSET + (CARD_Z_OFFSET * j));
+        // }
         for (int i = index+1, j = 1; i < elements.Count; i++, j++)
         {
-            float x = elements[i].localPosition.x + (offsetWidth);
+            float x = elements[i].localPosition.x;
             elements[i].localPosition = new Vector3(x, 0, HOVER_Z_OFFSET + (CARD_Z_OFFSET * j));
         }
     }
