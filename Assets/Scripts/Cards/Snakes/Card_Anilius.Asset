@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Card_Anilius
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ef0a362a9c90f334996ba5dcaa6d763f, type: 2}
+  sprite: {fileID: 21300000, guid: 12fc627316a647b41a91bc4ce52aadbe, type: 3}
   title: Anilius
   funFact: asdfasdkl asdf asdf as df
   description: Sdf asdf sdf s

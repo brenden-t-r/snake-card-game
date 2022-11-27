@@ -43,10 +43,11 @@ public class CustomHorizontalFitter : MonoBehaviour
 
         // Hover display or un-display based on mouse position
         int layerMask = 1 << gameObject.layer;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, layerMask)) 
+        Vector2 ray = cam.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero, layerMask);
+        if (hit)
         {
-            OnHoverEnter(hit.transform);
+            OnHoverEnter(hit.collider.gameObject.transform);
         }
         else
         {

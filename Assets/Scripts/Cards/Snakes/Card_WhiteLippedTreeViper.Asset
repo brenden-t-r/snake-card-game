@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Card_WhiteLippedTreeViper
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 671e4a041afec6b4e8094374b759cd09, type: 2}
+  sprite: {fileID: 21300000, guid: a92c93efd2ccbea4b9f709da77ef45c5, type: 3}
   title: White-Lipped Tree Viper
   funFact: hkkhjkj
   description: jbjljhkjhk
