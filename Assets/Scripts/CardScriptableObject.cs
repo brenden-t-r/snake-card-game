@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardScriptableObject : ScriptableObject
 {
     public Material material;
+    public Sprite sprite;
     public string title;
     public string funFact;
     public string description;

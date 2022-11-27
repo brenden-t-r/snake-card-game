@@ -32,13 +32,18 @@ public class Card : MonoBehaviour
     public void Initialize()
     {
         renderer.material = cardScriptableObject.material;
+        if (renderer is SpriteRenderer)
+        {
+            SpriteRenderer spriteRenderer = (SpriteRenderer)renderer;
+            spriteRenderer.sprite = cardScriptableObject.sprite;
+        }
         textTitle.SetText(cardScriptableObject.title);
-        textDescription.SetText(cardScriptableObject.description);
-        textFunFact.SetText(cardScriptableObject.funFact);
-        textEcosystem.SetText(cardScriptableObject.ecosystem.ToString());
-        List<string> mechanics = cardScriptableObject.mechanics
-            .Select(x => x.ToString()).ToList();
-        textMechanics.SetText(String.Join(", ", mechanics));
+        //textDescription.SetText(cardScriptableObject.description);
+        //textFunFact.SetText(cardScriptableObject.funFact);
+        //textEcosystem.SetText(cardScriptableObject.ecosystem.ToString());
+       // List<string> mechanics = cardScriptableObject.mechanics
+       //     .Select(x => x.ToString()).ToList();
+       // textMechanics.SetText(String.Join(", ", mechanics));
     }
     
 }

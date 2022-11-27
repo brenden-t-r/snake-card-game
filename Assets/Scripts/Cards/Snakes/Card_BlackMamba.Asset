@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Card_BlackMamba
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 5b60060772886484299f0d3e9ea47c4b, type: 2}
+  sprite: {fileID: 21300000, guid: 1b985e22434d41f4fb9a02fffe47fdeb, type: 3}
   title: Black Mamba
   funFact: The most venomous snake
   description: Sdf asdf sdf s

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Card_RingNeckedSnake
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 816bbe9b5539d764bb2ff01b4d44663a, type: 2}
+  sprite: {fileID: 21300000, guid: 61f08ea22a539cb4b865b73db2b8c081, type: 3}
   title: Ring-necked Snake
   funFact: asdfasdkl asdf asdf as df
   description: Sdf asdf sdf s
