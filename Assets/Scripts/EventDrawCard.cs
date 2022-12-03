@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-public class EventDrawCard : UnityEvent<CardScriptableObject>
+public class EventDrawCard : UnityEvent<CardBase>
 {
     
 }

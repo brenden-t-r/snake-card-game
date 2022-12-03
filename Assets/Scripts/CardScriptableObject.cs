@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class CardScriptableObject : ScriptableObject
+public class CardScriptableObject : ScriptableObject, CardBase
 {
     public Material material;
     public Sprite sprite;
@@ -11,7 +11,7 @@ public class CardScriptableObject : ScriptableObject
     public string description;
     public Ecosystem ecosystem;
     public List<Mechanic> mechanics;
-
+    
     public enum Ecosystem
     {
         DESERT=0,
@@ -24,6 +24,11 @@ public class CardScriptableObject : ScriptableObject
     {
         VENOMOUS=0,
         CANNIBAL=1
+    }
+    
+    public CardBase.CardType GetCardType()
+    {
+        return CardBase.CardType.SNAKE;
     }
 
     #if UNITY_EDITOR

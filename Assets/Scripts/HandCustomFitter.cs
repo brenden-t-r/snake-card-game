@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.ComponentModel;
+using UnityEngine;
 using UnityEngine.UI;
 
 /*
@@ -9,6 +11,7 @@ public class HandCustomFitter : MonoBehaviour
     private readonly int HAND_LAYER = 3;
     [SerializeField] private float SCALE_FACTOR = 0; // Hack for camera scale difference
     [SerializeField] private GameObject prefabCard;
+    [SerializeField] private GameObject prefabFood;
     private int numOfCards = 0;
 
     public void Start()
@@ -16,10 +19,25 @@ public class HandCustomFitter : MonoBehaviour
          Events.EventDrawCard.AddListener(DrawCard);
     }
 
+    private void DrawCard(CardBase card)
+    {
+        switch (card.GetCardType())
+        {
+            case CardBase.CardType.SNAKE:
+                DrawSnake((CardScriptableObject) card);
+                break;
+            case CardBase.CardType.FOOD:
+                DrawFood((FoodCardScriptableObject) card);
+                break;
+            default:
+                throw new InvalidEnumArgumentException();
+        }
+    }
+
     /*
      * Draw a specific card
      */
-    private void DrawCard(CardScriptableObject type)
+    private void DrawSnake(CardScriptableObject type)
     {
         numOfCards += 1;
         GameObject card = Instantiate(prefabCard, transform);
@@ -28,15 +46,12 @@ public class HandCustomFitter : MonoBehaviour
         cardScript.Initialize();
         DoSetupCard(card);
     }
-
-    /*
-     * Draw a card (currently just draws a dummy card)
-     * TODO: Integrate with Deck.
-     */
-    public void Draw()
+    
+    public void DrawFood(FoodCardScriptableObject type)
     {
         numOfCards += 1;
-        GameObject card = Instantiate(prefabCard, transform);
+        GameObject card = Instantiate(prefabFood, transform);
+        // TODO, Food type
         DoSetupCard(card);
     }
 
