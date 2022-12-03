@@ -39,7 +39,7 @@ public class Deck : MonoBehaviour
         Destroy(card);
 
         // Trigger draw card event (subscribed by Hand)
-        CardScriptableObject type = card.GetComponent<Card>().GetType();
+        CardBase type = card.GetComponent<Card>().GetCardType();
         Events.EventDrawCard.Invoke(type);
     }
 }

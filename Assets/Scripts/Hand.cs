@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +15,26 @@ public class Hand : MonoBehaviour
     {
          Events.EventDrawCard.AddListener(DrawCard);
     }
+    
+    private void DrawCard(CardBase card)
+    {
+        switch (card.GetCardType())
+        {
+            case CardBase.CardType.SNAKE:
+                DrawSnake((CardScriptableObject) card);
+                break;
+            case CardBase.CardType.FOOD:
+                // Not implemented
+                break;
+            default:
+                throw new InvalidEnumArgumentException();
+        }
+    }
 
     /*
      * Draw a specific card
      */
-    private void DrawCard(CardScriptableObject type)
+    private void DrawSnake(CardScriptableObject type)
     {
         numOfCards += 1;
         GameObject card = Instantiate(prefabCard, transform);

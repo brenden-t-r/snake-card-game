@@ -24,7 +24,7 @@ public class Card : MonoBehaviour
         cardScriptableObject = type;
     }
 
-    public CardScriptableObject GetType()
+    public CardScriptableObject GetCardType()
     {
         return cardScriptableObject;
     }
