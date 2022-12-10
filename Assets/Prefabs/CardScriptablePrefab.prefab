@@ -730,10 +730,8 @@ MonoBehaviour:
   cardScriptableObject: {fileID: 11400000, guid: 28295a84d50351f4d9c5ba431ebcf28d, type: 2}
   renderer: {fileID: 9135173992113997179}
   textTitle: {fileID: 4906822500889899357}
-  textDescription: {fileID: 6765928133006867072}
-  textFunFact: {fileID: 3860260526458135694}
-  textEcosystem: {fileID: 3743463224962213106}
-  textMechanics: {fileID: 8454282708296929211}
+  textAttack: {fileID: 4704576376625720363}
+  textHealth: {fileID: 6830552231420541093}
 --- !u!1 &5327857407253844755
 GameObject:
   m_ObjectHideFlags: 0

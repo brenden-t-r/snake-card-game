@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_Anaconda
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 8e75240b5440c19469c6bb3b44f96df7, type: 3}
   material: {fileID: 2100000, guid: ac272a218538b414c8d992045da41cbb, type: 2}
+  sprite: {fileID: 21300000, guid: 8e75240b5440c19469c6bb3b44f96df7, type: 3}
   title: Anaconda
+  attack: 5
+  health: 5
   funFact: Biggest one lol
   description: 'asdfasd fasdf '
   ecosystem: 3

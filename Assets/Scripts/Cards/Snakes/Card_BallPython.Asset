@@ -15,6 +15,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: fc6dc703070bfca448ee6bdbcbd29385, type: 2}
   sprite: {fileID: 21300000, guid: ad08a65ad2c9fea4f85ea11182c2fae4, type: 3}
   title: Ball Python
+  attack: 3
+  health: 5
   funFact: asdfasdkl asdf asdf as df
   description: Sdf asdf sdf s
   ecosystem: 2

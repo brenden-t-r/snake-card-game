@@ -7,6 +7,8 @@ public class CardScriptableObject : ScriptableObject, CardBase
     public Material material;
     public Sprite sprite;
     public string title;
+    public int attack;
+    public int health;
     public string funFact;
     public string description;
     public Ecosystem ecosystem;
