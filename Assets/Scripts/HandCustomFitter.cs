@@ -63,7 +63,7 @@ public class HandCustomFitter : MonoBehaviour
         {
             cardTransform.localScale = new Vector3(
                 cardTransform.localScale.x * SCALE_FACTOR, 
-                cardTransform.localScale.y, 0
+                cardTransform.localScale.y, cardTransform.localScale.z
                 );
         }
         Utils.SetLayerAllChildren(transform, HAND_LAYER);
