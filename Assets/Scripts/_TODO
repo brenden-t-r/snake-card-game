@@ -1,3 +1,4 @@
-﻿- Draw food implementation to hand, trigger event on click 
+﻿- Draw food event
 - Play card event
-- Show attack/defense for each card in hand
+- Food ux (Particle, better hover movement)
+- Hand UX, fanned cards
