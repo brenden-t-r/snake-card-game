@@ -51,7 +51,9 @@ public class HandCustomFitter : MonoBehaviour
     {
         numOfCards += 1;
         GameObject card = Instantiate(prefabFood, transform);
-        // TODO, Food type
+        FoodCard cardScript = card.GetComponent<FoodCard>();
+        cardScript.SetType(type);
+        cardScript.Initialize();
         DoSetupCard(card);
     }
 
