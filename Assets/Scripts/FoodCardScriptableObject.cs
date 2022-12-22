@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System;
+using System.Diagnostics;
+using UnityEditor;
 using UnityEngine;
 
 public class FoodCardScriptableObject : ScriptableObject, CardBase
@@ -12,6 +14,23 @@ public class FoodCardScriptableObject : ScriptableObject, CardBase
         REPTILE=1,
         SMALL_MAMMAL=2,
         LARGE_MAMMAL=3
+    }
+
+    public string FoodTypeToString(FoodType type)
+    {
+        switch (foodType)
+        {
+            case FoodType.AMPHIBIAN:
+                return "Amphibian";
+            case FoodType.REPTILE:
+                return "Reptile";
+            case FoodType.SMALL_MAMMAL:
+                return "Small Mammal";
+            case FoodType.LARGE_MAMMAL:
+                return "Large Mammal";
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
     
     public CardBase.CardType GetCardType()
