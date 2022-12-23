@@ -10,6 +10,8 @@ public class Deck : MonoBehaviour
 
     private void Start()
     {
+        Events.ShuffleDiscardCallback.AddListener(ShuffleDiscardIntoDeck);
+        
         // Create prefab for each card in cardTypes
         int i = 0;
         foreach (CardScriptableObject type in cardTypes)
@@ -41,5 +43,10 @@ public class Deck : MonoBehaviour
         // Trigger draw card event (subscribed by Hand)
         CardBase type = card.GetComponent<Card>().GetCardType();
         Events.EventDrawCard.Invoke(type);
+    }
+
+    public void ShuffleDiscardIntoDeck(List<GameObject> discard)
+    {
+        cards.AddRange(discard);
     }
 }

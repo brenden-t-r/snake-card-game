@@ -1,5 +1,5 @@
-﻿- Draw food event
-- Play card event
+﻿- Play card event
 - Food ux (Particle, better hover movement)
 - Hand UX, fanned cards, fixing width and 10 scale issue
 - Turn structure, draw 5 cards, buy food, play snake, discard
+- Draw snake, select from 3 random
