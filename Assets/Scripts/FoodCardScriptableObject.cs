@@ -16,7 +16,7 @@ public class FoodCardScriptableObject : ScriptableObject, CardBase
         LARGE_MAMMAL=3
     }
 
-    public string FoodTypeToString(FoodType type)
+    public string FoodTypeToString()
     {
         switch (foodType)
         {

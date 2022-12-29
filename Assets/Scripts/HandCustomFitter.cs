@@ -47,7 +47,7 @@ public class HandCustomFitter : MonoBehaviour
         DoSetupCard(card);
     }
     
-    public void DrawFood(FoodCardScriptableObject type)
+    private void DrawFood(FoodCardScriptableObject type)
     {
         numOfCards += 1;
         GameObject card = Instantiate(prefabFood, transform);
