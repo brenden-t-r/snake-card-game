@@ -2,12 +2,10 @@
 
 public class FoodPile : MonoBehaviour
 {
-    [SerializeField] private FoodCardScriptableObject.FoodType foodType;
+    [SerializeField] private FoodCardScriptableObject cardScriptableObject;
 
     public void Draw()
     {
-       FoodCardScriptableObject card = ScriptableObject.CreateInstance<FoodCardScriptableObject>();
-       card.foodType = foodType;
-       Events.EventDrawCard.Invoke(card);
+        Events.EventDrawCard.Invoke(cardScriptableObject);
     }
 }
