@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_Anilius
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: ef0a362a9c90f334996ba5dcaa6d763f, type: 2}
   sprite: {fileID: 21300000, guid: 12fc627316a647b41a91bc4ce52aadbe, type: 3}
   spriteInPlay: {fileID: 21300000, guid: c1eeba08cf3d1224eae81cda1cf85cf2, type: 3}
   title: Anilius
   attack: 1
   health: 1
-  funFact: asdfasdkl asdf asdf as df
-  description: Sdf asdf sdf s
-  ecosystem: 2
-  mechanics: 00000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 0
+  foodLargeMammal: 0
+  foodRequirement: 1

@@ -8,10 +8,12 @@ public class Card : MonoBehaviour
     [SerializeField] private TMP_Text textTitle;
     [SerializeField] private TMP_Text textAttack;
     [SerializeField] private TMP_Text textHealth;
-    // [SerializeField] private TMP_Text textDescription;
-    // [SerializeField] private TMP_Text textFunFact;
-    // [SerializeField] private TMP_Text textEcosystem;
-    // [SerializeField] private TMP_Text textMechanics;
+    [SerializeField] private TMP_Text textFoodCost;
+    [SerializeField] private SpriteRenderer spriteAmphibian;
+    [SerializeField] private SpriteRenderer spriteReptile;
+    [SerializeField] private SpriteRenderer spriteSmallMammal;
+    [SerializeField] private SpriteRenderer spriteLargeMammal;
+    private float ICON_LOW_OPACITY = 0.33f;
 
     public void Start()
     {
@@ -30,7 +32,6 @@ public class Card : MonoBehaviour
 
     public void Initialize()
     {
-        // renderer.material = cardScriptableObject.material;
         if (renderer is SpriteRenderer)
         {
             SpriteRenderer spriteRenderer = (SpriteRenderer)renderer;
@@ -39,12 +40,11 @@ public class Card : MonoBehaviour
         textTitle.SetText(cardScriptableObject.title);
         textAttack.SetText(cardScriptableObject.attack.ToString());
         textHealth.SetText(cardScriptableObject.health.ToString());
-        //textDescription.SetText(cardScriptableObject.description);
-        //textFunFact.SetText(cardScriptableObject.funFact);
-        //textEcosystem.SetText(cardScriptableObject.ecosystem.ToString());
-        // List<string> mechanics = cardScriptableObject.mechanics
-        //     .Select(x => x.ToString()).ToList();
-        // textMechanics.SetText(String.Join(", ", mechanics));
+        textFoodCost.SetText(cardScriptableObject.foodRequirement.ToString());
+        spriteAmphibian.color = new Color(0, 0, 0, cardScriptableObject.foodAmphibian ? 1 : ICON_LOW_OPACITY);
+        spriteReptile.color = new Color(0, 0, 0, cardScriptableObject.foodReptile ? 1 : ICON_LOW_OPACITY);
+        spriteSmallMammal.color = new Color(0, 0, 0, cardScriptableObject.foodSmallMammal ? 1 : ICON_LOW_OPACITY);
+        spriteLargeMammal.color = new Color(0, 0, 0, cardScriptableObject.foodLargeMammal ? 1 : ICON_LOW_OPACITY);
     }
     
 }

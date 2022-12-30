@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_WhiteLippedTreeViper
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 671e4a041afec6b4e8094374b759cd09, type: 2}
   sprite: {fileID: 21300000, guid: a92c93efd2ccbea4b9f709da77ef45c5, type: 3}
   spriteInPlay: {fileID: 21300000, guid: a13dba34461813a4ea63922aecd96f45, type: 3}
   title: White-Lipped Tree Viper
   attack: 2
   health: 1
-  funFact: hkkhjkj
-  description: jbjljhkjhk
-  ecosystem: 1
-  mechanics: 
+  foodAmphibian: 0
+  foodReptile: 1
+  foodSmallMammal: 1
+  foodLargeMammal: 0
+  foodRequirement: 2
