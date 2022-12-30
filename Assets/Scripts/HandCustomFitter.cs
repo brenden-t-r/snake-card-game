@@ -44,6 +44,7 @@ public class HandCustomFitter : MonoBehaviour
         Card cardScript = card.GetComponent<Card>();
         cardScript.SetType(type);
         cardScript.Initialize();
+        card.AddComponent<HandCardPlay>();
         DoSetupCard(card);
     }
     
