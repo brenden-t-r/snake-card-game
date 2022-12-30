@@ -6,6 +6,7 @@ public class CardScriptableObject : ScriptableObject, CardBase
 {
     public Material material;
     public Sprite sprite;
+    public Sprite spriteInPlay;
     public string title;
     public int attack;
     public int health;

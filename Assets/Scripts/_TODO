@@ -1,8 +1,10 @@
-﻿- Play card event
+﻿- Hand UX, fanned cards, fixing width and 10 scale issue
 - Food card ux (Particle, better hover movement)
-- Hand UX, fanned cards, fixing width and 10 scale issue
+- Choose 3 animation
 - Turn structure, draw 5 cards, buy food, play snake, discard
-- Draw snake, select from 3 random
 - Food cost
 - Health
 - New snake cards
+- Bug, custom fitter, handle 0 cards
+- Play card, handle slots already filled
+- Play card, handle all slots filled

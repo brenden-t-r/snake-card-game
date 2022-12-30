@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 5b60060772886484299f0d3e9ea47c4b, type: 2}
   sprite: {fileID: 21300000, guid: 1b985e22434d41f4fb9a02fffe47fdeb, type: 3}
+  spriteInPlay: {fileID: 21300000, guid: 8919ad95421c6904f99ac01a74fd4f8c, type: 3}
   title: Black Mamba
   attack: 7
   health: 2
