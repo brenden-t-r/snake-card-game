@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_Boomslang
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: caa9b4dce2723634d9f6c9e24ead3f72, type: 2}
   sprite: {fileID: 21300000, guid: 903e777d6350a0b4586c6906b940ab5a, type: 3}
   spriteInPlay: {fileID: 21300000, guid: 9306bb8915797a84eafda43bab6c785b, type: 3}
   title: Boomslang
   attack: 2
   health: 2
-  funFact: asdfasdkl asdf asdf as df
-  description: Sdf asdf sdf s
-  ecosystem: 2
-  mechanics: 00000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 1
+  foodLargeMammal: 0
+  foodRequirement: 2

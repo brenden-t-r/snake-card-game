@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_KingCobra
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 9de56f81b7e2842419242883c7e96e60, type: 2}
   sprite: {fileID: 21300000, guid: ac1e4b5f273e01d44a77a972a79815e4, type: 3}
   spriteInPlay: {fileID: 21300000, guid: 7563874c7dea0674db95b23c5b46c38b, type: 3}
   title: King Cobra
   attack: 5
   health: 3
-  funFact: Amazing very good..
-  description: When played, moved one Snake card in play to the discard pile.
-  ecosystem: 2
-  mechanics: 0000000001000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 0
+  foodLargeMammal: 0
+  foodRequirement: 3

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_IndianCobra
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: c8d7b5e134b4fa341be1e531115da109, type: 2}
   sprite: {fileID: 21300000, guid: 8294d0bfe0d22a343b02efdf3d924295, type: 3}
   spriteInPlay: {fileID: 21300000, guid: 510a1c846da8b6146b7c33cfde835e7f, type: 3}
   title: Indian Cobra
   attack: 5
   health: 2
-  funFact: asdfasdkl asdf asdf as df
-  description: Sdf asdf sdf s
-  ecosystem: 2
-  mechanics: 00000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 1
+  foodLargeMammal: 0
+  foodRequirement: 3

@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_ScarletKingSnake
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 326d007bcc455bb4f9ae84ff5cfa3005, type: 2}
   sprite: {fileID: 21300000, guid: 90a5f298e4cd62245bf164f25b0a951a, type: 3}
   spriteInPlay: {fileID: 21300000, guid: ed552547a5d92c3458cac776b70daf79, type: 3}
   title: Scarlet King Snake
   attack: 1
   health: 2
-  funFact: Pretty cool snake I would get one.
-  description: Draw 3 cards from the top of your deck. Choose one to add to your
-    hand, discard the remaining.
-  ecosystem: 1
-  mechanics: 
+  foodAmphibian: 0
+  foodReptile: 1
+  foodSmallMammal: 0
+  foodLargeMammal: 0
+  foodRequirement: 1

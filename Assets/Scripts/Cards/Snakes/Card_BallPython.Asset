@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_BallPython
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: fc6dc703070bfca448ee6bdbcbd29385, type: 2}
   sprite: {fileID: 21300000, guid: ad08a65ad2c9fea4f85ea11182c2fae4, type: 3}
   spriteInPlay: {fileID: 21300000, guid: d67bcaf64f31911429e7e4b8a925ebde, type: 3}
   title: Ball Python
   attack: 3
   health: 5
-  funFact: asdfasdkl asdf asdf as df
-  description: Sdf asdf sdf s
-  ecosystem: 2
-  mechanics: 00000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 1
+  foodLargeMammal: 1
+  foodRequirement: 4

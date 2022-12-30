@@ -1368,7 +1368,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e9912fe48afa384490a84b290f3bb00, type: 2}
   - {fileID: 11400000, guid: 1fece652fe73be241aaf0670d6cb4213, type: 2}
   cards: []
-  prefabCard: {fileID: 5327857406843766888, guid: dc947dbb49f80ea42b44fd7d07363ba1, type: 3}
+  prefabCard: {fileID: 1034149036538110677, guid: f923d06b4bdce84438a32abe9be0b382, type: 3}
 --- !u!4 &557109109
 Transform:
   m_ObjectHideFlags: 0

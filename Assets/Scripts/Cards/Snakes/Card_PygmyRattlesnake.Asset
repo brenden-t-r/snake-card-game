@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84015440250b04abe9a59c82078c7f, type: 3}
   m_Name: Card_PygmyRattlesnake
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: f26d937673edab942ad7a7685cdac22a, type: 2}
   sprite: {fileID: 21300000, guid: 7d85dd7adb203f749b0f48df74511f00, type: 3}
   spriteInPlay: {fileID: 21300000, guid: 44463c4dd1d116b46ac117528dc3bc50, type: 3}
   title: Pygmy Rattlesnake
   attack: 2
   health: 3
-  funFact: asdfasdkl asdf asdf as df
-  description: Sdf asdf sdf s
-  ecosystem: 2
-  mechanics: 00000000
+  foodAmphibian: 1
+  foodReptile: 1
+  foodSmallMammal: 0
+  foodLargeMammal: 0
+  foodRequirement: 2
