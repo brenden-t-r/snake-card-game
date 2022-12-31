@@ -19,6 +19,11 @@ public class FoodCard : MonoBehaviour
     {
         cardScriptableObject = type;
     }
+
+    public FoodCardScriptableObject GetType()
+    {
+        return cardScriptableObject;
+    }
     
     public void Initialize()
     {

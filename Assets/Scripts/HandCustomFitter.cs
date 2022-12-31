@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.UI;
 
 /*
  * Duplicate of Hand class, but configured for the customer fitter hand.

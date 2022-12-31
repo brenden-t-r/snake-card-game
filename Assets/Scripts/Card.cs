@@ -45,6 +45,11 @@ public class Card : MonoBehaviour
         spriteReptile.color = new Color(0, 0, 0, cardScriptableObject.foodReptile ? 1 : ICON_LOW_OPACITY);
         spriteSmallMammal.color = new Color(0, 0, 0, cardScriptableObject.foodSmallMammal ? 1 : ICON_LOW_OPACITY);
         spriteLargeMammal.color = new Color(0, 0, 0, cardScriptableObject.foodLargeMammal ? 1 : ICON_LOW_OPACITY);
+        FoodHelper FoodHelper = GetComponent<FoodHelper>();
+        if (FoodHelper)
+        {
+            FoodHelper.SetType(cardScriptableObject);
+        }
     }
     
 }
