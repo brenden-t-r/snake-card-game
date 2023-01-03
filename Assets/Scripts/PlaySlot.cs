@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlaySlot : MonoBehaviour
 {
@@ -16,14 +15,12 @@ public class PlaySlot : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("enter " + gameObject.name);
         spriteRenderer.sprite = hoverSprite;
         spriteRenderer.color = new Color(1, 1, 1, HOVER_OPACITY);
     }
 
     private void OnMouseExit()
     {
-        Debug.Log("exit");
         spriteRenderer.sprite = sprite;
         spriteRenderer.color = new Color(1, 1, 1, OPACITY);
     }
