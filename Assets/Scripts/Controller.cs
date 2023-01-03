@@ -7,4 +7,9 @@ public class Controller : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/CardDisplayDemoScene");
     }
+
+    public void EndTurn()
+    {
+        Events.EventEndTurn.Invoke();
+    }
 }

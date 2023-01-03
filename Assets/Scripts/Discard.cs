@@ -3,23 +3,31 @@ using UnityEngine;
 
 public class Discard : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> cards;
-    // [SerializeField] private GameObject prefabCard;
+    private List<CardBase> cards = new List<CardBase>();
 
     public void Start()
     {
-        Events.ShuffleDiscard.AddListener(Shuffle);
+        Events.EventDiscard.AddListener(DiscardCards);
+        Events.ShuffleDiscard.AddListener(ShuffleAndReset);
     }
 
-    private void AddCard(GameObject card)
+    private void DiscardCards(List<CardBase> cardBases)
     {
-        cards.Add(card);
+        Debug.Log("Discard:DiscardCards");
+        cards.AddRange(cardBases);
+        DiscardUpdateEvent();
     }
 
-    private void Shuffle()
+    private void ShuffleAndReset()
     {
         cards = Utils.ShuffleFisherYates(cards);
         Events.ShuffleDiscardCallback.Invoke(cards);
-        cards = new List<GameObject>();
+        cards = new List<CardBase>();
+        DiscardUpdateEvent();
+    }
+    
+    private void DiscardUpdateEvent()
+    {
+        Events.EventDiscardUpdate.Invoke(cards);
     }
 }

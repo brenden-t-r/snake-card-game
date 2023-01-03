@@ -19,6 +19,7 @@ public class Hand : MonoBehaviour
     {
          Events.EventDrawCard.AddListener(DrawCard);
          Events.EventDoHandUpdate.AddListener(HandUpdateEvent);
+         Events.EventDiscardHand.AddListener(DiscardHand);
     }
 
     private void DrawCard(CardBase card)
@@ -36,10 +37,7 @@ public class Hand : MonoBehaviour
         }
         HandUpdateEvent();
     }
-
-    /*
-     * Draw a specific card
-     */
+    
     private void DrawSnake(CardScriptableObject type)
     {
         numOfCards += 1;
@@ -74,7 +72,18 @@ public class Hand : MonoBehaviour
         }
         Utils.SetLayerAllChildren(transform, HAND_LAYER);
     }
-    
+
+    private void DiscardHand()
+    {
+        List<CardBase> cards = GetCardBaseFromChildren();
+        Events.EventDiscard.Invoke(cards);
+        foreach (Transform child in transform) {
+            Destroy(child.gameObject);
+        }
+        HandUpdateEvent();
+        Debug.Log("Hand:DiscardHand");
+    }
+
     private void HandUpdateEvent()
     {
         StartCoroutine(DoHandUpdateEventNextFrame());
@@ -85,12 +94,16 @@ public class Hand : MonoBehaviour
         // Wait a frame to accomodate any "Destroy()" calls made in the same frame as the event invocation.
         // Motivated by current implemented of cards with HandCardPlay script destroying themselves.
         yield return 0;
+        Events.EventHandUpdate.Invoke(GetCardBaseFromChildren());
+        yield return null;
+    }
+    
+    private List<CardBase> GetCardBaseFromChildren()
+    {
         List<CardBase> snakes = transform.GetComponentsInChildren<Card>().Select(x => (CardBase)x.GetCardType())
             .ToList();
         List<CardBase> food = transform.GetComponentsInChildren<FoodCard>().Select(x => (CardBase)x.GetType())
             .ToList();
-        List<CardBase> all = snakes.Concat(food).ToList();
-        Events.EventHandUpdate.Invoke(all);
-        yield return null;
+        return snakes.Concat(food).ToList();
     }
 }
