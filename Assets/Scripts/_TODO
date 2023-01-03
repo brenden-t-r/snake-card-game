@@ -1,10 +1,12 @@
 ﻿- Hand UX, fanned cards, fixing width and 10 scale issue
 - Food card ux (Particle, better hover movement)
-- Choose 3 animation
+- Choose 3 UX, animation
+- Food cost UX
 - Turn structure, draw 5 cards, buy food, play snake, discard
-- Food cost
 - Health
-- New snake cards
+- Cards, Add new snake cards
+- Cards, Update illustrations that don't work well
 - Bug, custom fitter, handle 0 cards
 - Play card, handle slots already filled
 - Play card, handle all slots filled
+- Deck, Support an empty deck and triggering suffling events. Can be mid or post deal.

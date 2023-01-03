@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventShuffleDiscardCallback : UnityEvent<List<GameObject>>
+public class EventShuffleDiscardCallback : UnityEvent<List<CardBase>>
 {
     
 }
