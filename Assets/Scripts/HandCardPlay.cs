@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HandCardPlay : MonoBehaviour
 {
@@ -18,6 +17,7 @@ public class HandCardPlay : MonoBehaviour
 
     private void PlayCardCallback(Vector3 _)
     {
+        Events.EventDoHandUpdate.Invoke();
         Destroy(gameObject);
     }
 }

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public interface CardBase
+﻿public interface CardBase
 {
      public CardType GetCardType();
      

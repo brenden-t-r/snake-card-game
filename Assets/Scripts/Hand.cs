@@ -1,4 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 
 /*
@@ -15,6 +18,7 @@ public class Hand : MonoBehaviour
     public void Start()
     {
          Events.EventDrawCard.AddListener(DrawCard);
+         Events.EventDoHandUpdate.AddListener(HandUpdateEvent);
     }
 
     private void DrawCard(CardBase card)
@@ -30,6 +34,7 @@ public class Hand : MonoBehaviour
             default:
                 throw new InvalidEnumArgumentException();
         }
+        HandUpdateEvent();
     }
 
     /*
@@ -68,5 +73,24 @@ public class Hand : MonoBehaviour
                 );
         }
         Utils.SetLayerAllChildren(transform, HAND_LAYER);
+    }
+    
+    private void HandUpdateEvent()
+    {
+        StartCoroutine(DoHandUpdateEventNextFrame());
+    }
+    
+    private IEnumerator DoHandUpdateEventNextFrame()
+    {
+        // Wait a frame to accomodate any "Destroy()" calls made in the same frame as the event invocation.
+        // Motivated by current implemented of cards with HandCardPlay script destroying themselves.
+        yield return 0;
+        List<CardBase> snakes = transform.GetComponentsInChildren<Card>().Select(x => (CardBase)x.GetCardType())
+            .ToList();
+        List<CardBase> food = transform.GetComponentsInChildren<FoodCard>().Select(x => (CardBase)x.GetType())
+            .ToList();
+        List<CardBase> all = snakes.Concat(food).ToList();
+        Events.EventHandUpdate.Invoke(all);
+        yield return null;
     }
 }

@@ -11,6 +11,7 @@ public class Deck : MonoBehaviour
     private void Start()
     {
         Events.ShuffleDiscardCallback.AddListener(ShuffleDiscardIntoDeck);
+        Events.EventDrawCardsFromHand.AddListener(DrawCards);
         
         // Create prefab for each card in cardTypes
         int i = 0;
@@ -25,6 +26,8 @@ public class Deck : MonoBehaviour
             cards.Add(card);
             i += 1;
         }
+        
+        DeckUpdateEvent();
     }
 
     public List<GameObject> GetCards()
@@ -32,10 +35,16 @@ public class Deck : MonoBehaviour
         return cards;
     }
 
+    private void DrawCards(int x)
+    {
+        for (int i = 0; i < x; i++)
+        {
+            DrawCard();
+        }
+    }
+
     public void DrawCard()
     {
-        // Remove top card from deck
-        // TODO: Animation
         GameObject card = cards[cards.Count-1];
         cards = cards.Take(cards.Count - 1).ToList();
         Destroy(card);
@@ -48,5 +57,22 @@ public class Deck : MonoBehaviour
     public void ShuffleDiscardIntoDeck(List<GameObject> discard)
     {
         cards.AddRange(discard);
+    }
+    
+    private void DeckUpdateEvent()
+    {
+        List<CardBase> cardsList = cards.Select(card =>
+        {
+            if (card.TryGetComponent(out Card cardComponent))
+            {
+                return cardComponent.GetCardType();
+            }
+            else
+            {
+                card.TryGetComponent(out FoodCard foodComponent);
+                return (CardBase)foodComponent.GetType();
+            }
+        }).ToList();
+        Events.EventDeckUpdate.Invoke(cardsList);
     }
 }
