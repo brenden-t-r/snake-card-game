@@ -1,12 +1,35 @@
-﻿- Hand UX, fanned cards, fixing width and 10 scale issue
-- Food card ux (Particle, better hover movement)
-- Choose 3 UX, animation
-- Food cost UX
-- Turn structure, draw 5 cards, buy food, play snake, discard
-- Health
+﻿- Title screen
+- Title screen animation transition
+- Pause menu
+- Instructions / Tutorial
+- UX, Hand, fanned cards, fixing width and 10 scale issue
+- UX, Food Pile, particles, better hover movement, animate in and out
+- UX, Choose 3, card and branch animation
+- UX, Food cost fixes
+- UX, End turn button and turn indicator highlight
+- UX, Battle effects and animations
+- Opponent setup and game objects (Board, Hand, Deck, Discard, Health, Actions)
 - Cards, Add new snake cards
 - Cards, Update illustrations that don't work well
-- Bug, custom fitter, handle 0 cards
+- Battle phase, core mechanic
+- Battle, snake and opponent health updates
 - Play card, handle slots already filled
 - Play card, handle all slots filled
-- Deck, Support an empty deck and triggering suffling events. Can be mid or post deal.
+- Turn structure, only allow buying food and playing cards when its your turn, single food per turn
+- Deck, Support an empty deck and triggering shuffling events. Can be mid or post deal.
+- Bug, custom fitter, handle 0 cards
+
+Single Player Game
+
+- Opponent AI Controller
+
+Multiplayer Game
+
+- Opponent Network Controller
+
+Stretch Goals
+
+- Snake-themed mechanics (ex burmation, mating)
+- Card-specific actions/events
+- Event/scenario cards
+- Deckbuilding upgrades (similar to Hades)
