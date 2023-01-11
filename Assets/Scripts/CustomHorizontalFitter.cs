@@ -69,6 +69,9 @@ public class CustomHorizontalFitter : MonoBehaviour
     // Re-calculate element positions/widths. Will be called when elements are added or removed.
     private void Refresh()
     {
+        // Handle 0 case
+        if (elements.Count == 0) return;
+        
         // Calculate position and width of parent object
         float width = rect.rect.width;
         float startX = transform.position.x - (width / 2);
@@ -163,11 +166,21 @@ public class CustomHorizontalFitter : MonoBehaviour
         if (lastHoverIndex == -1) return;
         if (lastHoverIndex != -1)
         {
-            elements[lastHoverIndex].localPosition = new Vector3(
-                elements[lastHoverIndex].localPosition.x,
-                0,
-                lastHoverZ
-            );
+            try
+            {
+                elements[lastHoverIndex].localPosition = new Vector3(
+                    elements[lastHoverIndex].localPosition.x,
+                    0,
+                    lastHoverZ
+                );
+            }
+            catch (MissingReferenceException)
+            {
+                // Hack: ignoring this for now, related to discarding hand
+                Debug.Log("MissingReferenceException ignored");
+                lastHoverIndex = -1;
+                return;
+            }
         }
         lastHoverIndex = -1;
         Refresh();
