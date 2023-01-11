@@ -32,6 +32,11 @@ public class Deck : MonoBehaviour
 
     public void DrawCard()
     {
+        if (cards.Count == 0)
+        {
+            Events.ShuffleDiscard.Invoke();
+        }
+        
         CardBase card = cards[cards.Count-1];
         cards = cards.Take(cards.Count - 1).ToList();
 

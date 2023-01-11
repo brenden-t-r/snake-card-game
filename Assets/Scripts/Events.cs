@@ -32,6 +32,17 @@ public static class Events
     public static readonly EventHealthUpdate EventHealthUpdate = new EventHealthUpdate();
 }
 
+public static class OpponentEvents
+{
+    // TURN
+    public static readonly EventStartTurn EventStartTurn = new EventStartTurn();
+    public static readonly EventEndTurn EventEndTurn = new EventEndTurn();
+    public static readonly EventDiscardUpdate EventDiscardUpdate = new EventDiscardUpdate();
+    public static readonly EventDeckUpdate EventDeckUpdate = new EventDeckUpdate();
+}
+
+
+public class EventStartTurn: UnityEvent{}
 public class EventEndTurn: UnityEvent{}
 public class EventDiscard: UnityEvent<List<CardBase>>{}
 public class EventDiscardHand: UnityEvent{}
