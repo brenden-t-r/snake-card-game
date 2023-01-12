@@ -165,23 +165,21 @@ public class CustomHorizontalFitter : MonoBehaviour
     private void OnHoverExit()
     {
         if (lastHoverIndex == -1) return;
-        if (lastHoverIndex != -1)
+        if (lastHoverIndex >= elements.Count) return;
+        try
         {
-            try
-            {
-                elements[lastHoverIndex].localPosition = new Vector3(
-                    elements[lastHoverIndex].localPosition.x,
-                    0,
-                    lastHoverZ
-                );
-            }
-            catch (MissingReferenceException)
-            {
-                // Hack: ignoring this for now, related to discarding hand
-                Debug.Log("MissingReferenceException ignored");
-                lastHoverIndex = -1;
-                return;
-            }
+            elements[lastHoverIndex].localPosition = new Vector3(
+                elements[lastHoverIndex].localPosition.x,
+                0,
+                lastHoverZ
+            );
+        }
+        catch (MissingReferenceException)
+        {
+            // Hack: ignoring this for now, related to discarding hand
+            Debug.Log("MissingReferenceException ignored");
+            lastHoverIndex = -1;
+            return;
         }
         lastHoverIndex = -1;
         Refresh();
