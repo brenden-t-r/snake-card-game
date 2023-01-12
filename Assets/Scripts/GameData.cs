@@ -12,7 +12,7 @@ public class GameData : MonoBehaviour
     public List<CardScriptableObject> playerCardsInPlay;
 
     // TODO: Not implemented
-    // private float opponentHealth;
+    public float opponentHealth;
     // private List<CardBase> opponentHand;
     // private List<CardBase> opponentDeck;
     // private List<CardBase> opponentDiscard;

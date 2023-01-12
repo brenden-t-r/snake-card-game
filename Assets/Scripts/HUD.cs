@@ -32,5 +32,13 @@ public class HUD : MonoBehaviour
         textHealth.text = "" + Math.Round(healthMeter.value * 100) + "/100";
         deckPileCount.text = deckCount.ToString();
         discardPileCount.text = discardCount.ToString();
+        // TODO: Move this out of Update
+        if (isOpponent)
+        {
+            GameData.instance.opponentHealth = healthMeter.value * 100;
+        }
+        else {
+            GameData.instance.playerHealth = healthMeter.value * 100;
+        }
     }
 }

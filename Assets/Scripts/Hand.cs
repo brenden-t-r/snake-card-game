@@ -17,9 +17,9 @@ public class Hand : MonoBehaviour
 
     public void Start()
     {
-         Events.EventDrawCard.AddListener(DrawCard);
-         Events.EventDoHandUpdate.AddListener(HandUpdateEvent);
-         Events.EventDiscardHand.AddListener(DiscardHand);
+        Events.EventDrawCard.AddListener(DrawCard);
+        Events.EventDoHandUpdate.AddListener(HandUpdateEvent);
+        Events.EventDiscardHand.AddListener(DiscardHand);
     }
 
     private void DrawCard(CardBase card)

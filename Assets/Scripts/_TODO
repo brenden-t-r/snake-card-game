@@ -1,8 +1,9 @@
 ﻿- Title screen
-- Title screen animation transition
+- Title screen animation transition`
 - Pause menu
+- Game over screen/behavior
 - Instructions / Tutorial
-- UX, Hand, fanned cards, fixing width and 10 scale issue
+- UX, Hand, fanned cards, fixing width and 10 scale issue`
 - UX, Food Pile, particles, better hover movement, animate in and out
 - UX, Choose 3, card and branch animation
 - UX, Food cost fixes

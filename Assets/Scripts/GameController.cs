@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
-    
-    // TODO: Not implemented
-	
+
     int playerInControl;
-	
     private readonly int PLAYER_PROTAGONIST = 0;
     private readonly int PLAYER_OPPONENT = 1;
     private readonly int NUM_CARDS_TO_DRAW = 5;
@@ -31,37 +29,48 @@ public class GameController : MonoBehaviour {
     }
     
     private void StartPlayerTurn() {
-        // Draw X cards
-        // Enable relevant UI features
-        // Allow player to make 1 purchase
-        // Allow player to put cards into play
-        // Wait until player clicks to end turn
-        // Trigger end turn 
+        // TODO: Toggle relevant UI features
         Events.EventDrawCardsFromDeck.Invoke(NUM_CARDS_TO_DRAW);
     }
 
-    private void EndTurn() {
-        Debug.Log("GameController:EndTurn");
-        // Disable relevant UI features
-        // Discard hand
-        // Resolve actions on board
-        // If either player's health reaches 0, end game.
-        Events.EventDiscardHand.Invoke();
-        
-        playerInControl = playerInControl == 1 ? 0 : 1;
-        StartTurn();
-    }
-    
     private void StartOpponentTurn() {
         OpponentEvents.EventStartTurn.Invoke();
+    }
+    
+    private void EndTurn() {
+        Debug.Log("GameController:EndTurn");
+        // TODO: Toggle relevant UI features
+        // TODO: Resolve actions on board
+        Events.EventDiscardHand.Invoke();
+        DoEndTurn();
     }
 
     private void EndOpponentTurn()
     {
         Debug.Log("GameController::EndOpponentTurn");
-        // If either player's health reaches 0, end game.
-        playerInControl = playerInControl == 1 ? 0 : 1;
+        // TODO: Resolve actions on board
+        DoEndTurn();
+    }
+
+    private void DoEndTurn()
+    {
+        CheckEndGameConditions();
+        playerInControl = playerInControl == PLAYER_PROTAGONIST ? PLAYER_OPPONENT : PLAYER_PROTAGONIST;
         StartTurn();
     }
 
+    private void CheckEndGameConditions()
+    {
+        // TODO: Implement
+        if (GameData.instance.playerHealth <= 0)
+        {
+            Debug.Log("Game over; player loses");
+        } else if (GameData.instance.opponentHealth <= 0)
+        {
+            Debug.Log("Game over; player wins!");
+        }
+        else return;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
