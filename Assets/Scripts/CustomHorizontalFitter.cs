@@ -39,6 +39,18 @@ public class CustomHorizontalFitter : MonoBehaviour
 
     private void Update()
     {
+        // Recalculate card positions and widths if cards are added or removed from hand
+        if (transform.childCount != elements.Count)
+        {
+            elements = new List<Transform>();
+            foreach (Transform child in transform)
+            {
+                elements.Add(child);
+            }
+            Refresh();
+        }
+        
+        // Short circuit if no elements
         if (elements == null || elements.Count < 1) return;
 
         // Hover display or un-display based on mouse position
@@ -52,17 +64,6 @@ public class CustomHorizontalFitter : MonoBehaviour
         else
         {
             OnHoverExit();
-        }
-        
-        // Recalculate card positions and widths if cards are added or removed from hand
-        if (transform.childCount != elements.Count)
-        {
-            elements = new List<Transform>();
-            foreach (Transform child in transform)
-            {
-                elements.Add(child);
-            }
-            Refresh();
         }
     }
 
