@@ -39,16 +39,18 @@ public static class OpponentEvents
     public static readonly EventEndTurn EventEndTurn = new EventEndTurn();
     public static readonly EventDiscardUpdate EventDiscardUpdate = new EventDiscardUpdate();
     public static readonly EventDeckUpdate EventDeckUpdate = new EventDeckUpdate();
+    public static readonly EventOpponentPlayCard EventPlayCard = new EventOpponentPlayCard();
 }
 
 
-public class EventStartTurn: UnityEvent{}
-public class EventEndTurn: UnityEvent{}
-public class EventDiscard: UnityEvent<List<CardBase>>{}
-public class EventDiscardHand: UnityEvent{}
-public class EventDrawCardsFromDeck: UnityEvent<int>{}
+public class EventStartTurn : UnityEvent{}
+public class EventEndTurn : UnityEvent{}
+public class EventDiscard : UnityEvent<List<CardBase>>{}
+public class EventDiscardHand : UnityEvent{}
+public class EventDrawCardsFromDeck : UnityEvent<int>{}
 public class EventDoHandUpdate : UnityEvent{}
 public class EventHandUpdate : UnityEvent<List<CardBase>>{}
 public class EventDeckUpdate : UnityEvent<List<CardBase>>{}
 public class EventDiscardUpdate : UnityEvent<List<CardBase>>{}
 public class EventHealthUpdate : UnityEvent<float>{}
+public class EventOpponentPlayCard : UnityEvent<CardScriptableObject, int>{}

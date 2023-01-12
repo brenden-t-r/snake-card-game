@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Opponent : MonoBehaviour
 {
@@ -13,6 +11,7 @@ public class Opponent : MonoBehaviour
     private List<CardBase> hand = new();
     private List<CardBase> discard = new();
     private List<CardBase> inPlay = new();
+    private CardScriptableObject[] inPlaySlots = new CardScriptableObject[6];
 
     private void Start()
     {
@@ -78,6 +77,11 @@ public class Opponent : MonoBehaviour
 
     private void PlayCardIfAble()
     {
+        if (inPlay.Count == inPlaySlots.Length)
+        {
+            return; // No available slots
+        }
+        
         List<FoodCardScriptableObject> food = hand
             .FindAll(x => x.GetCardType().Equals(CardBase.CardType.FOOD))
             .Select(x => (FoodCardScriptableObject)x).ToList();
@@ -97,9 +101,18 @@ public class Opponent : MonoBehaviour
             if (card.foodLargeMammal) haveTotal += foodLgM;
             if (haveTotal >= card.foodRequirement)
             {
-                // PLay card
-                Debug.Log("Opponent plays " + card.title);
-                break;
+                // Play card in first available slot
+                for (int i = 0; i < inPlaySlots.Length; i++)
+                {
+                    if (inPlaySlots[i] == null)
+                    {
+                        OpponentEvents.EventPlayCard.Invoke(card, i);
+                        inPlay.Add(card);
+                        inPlaySlots[i] = card;
+                        return;
+                    }
+                    
+                }
             }
         }
     }
