@@ -8,7 +8,6 @@
 - UX, Food cost fixes
 - UX, End turn button and turn indicator highlight
 - UX, Battle effects and animations
-- Opponent setup and game objects (Board, Hand, Deck, Discard, Health, Actions)
 - Cards, Add new snake cards
 - Cards, Update illustrations that don't work well
 - Battle phase, core mechanic
@@ -16,8 +15,6 @@
 - Play card, handle slots already filled
 - Play card, handle all slots filled
 - Turn structure, only allow buying food and playing cards when its your turn, single food per turn
-- Deck, Support an empty deck and triggering shuffling events. Can be mid or post deal.
-- Bug, custom fitter, handle 0 cards
 
 Single Player Game
 
